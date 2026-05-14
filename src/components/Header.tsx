@@ -41,7 +41,7 @@ export default function Header() {
         isScrolled ? 'py-4 glass border-b-0' : 'py-6 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+      <div className="custom-container flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 group">
           <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-[0_0_15px_rgba(218,165,32,0.3)] border border-white/10 group-hover:scale-105 transition-transform bg-white/5">
             <img 

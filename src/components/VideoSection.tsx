@@ -6,13 +6,13 @@ export default function VideoSection() {
     <section className="py-24 relative overflow-hidden bg-black/50">
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-64 bg-gold/10 blur-[150px] -z-10" />
       
-      <div className="container mx-auto px-6 max-w-5xl">
+      <div className="custom-container max-w-5xl">
         <div className="text-center mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6"
+            className="text-h2 font-display mb-8"
           >
             Veja Como <span className="text-gradient">Transformamos</span> Negócios
           </motion.h2>
@@ -21,7 +21,7 @@ export default function VideoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/70 max-w-2xl mx-auto"
+            className="text-body text-white/70 max-w-2xl mx-auto"
           >
             Confira como nossa metodologia de otimização de perfil no Google funciona na prática.
           </motion.p>

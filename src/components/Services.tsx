@@ -42,13 +42,13 @@ const services = [
 export default function Services() {
   return (
     <section id="servicos" className="py-24 relative">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="custom-container">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6"
+            className="text-h2 font-display mb-8"
           >
             Nossos Serviços <span className="text-gradient">Essenciais</span> para o Seu Sucesso Local
           </motion.h2>
@@ -57,13 +57,13 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/70"
+            className="text-body text-white/70"
           >
             Estratégias comprovadas para destacar seu negócio e dominar as buscas na sua região.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="card-grid">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -79,11 +79,11 @@ export default function Services() {
                 {service.icon}
               </div>
               
-              <h3 className="text-xl font-heading font-semibold text-white mb-3 group-hover:text-gold-light transition-colors">
+              <h3 className="text-h3 font-display text-white mb-3 group-hover:text-gold-light transition-colors">
                 {service.title}
               </h3>
               
-              <p className="text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
+              <p className="text-body text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
                 {service.description}
               </p>
             </motion.div>

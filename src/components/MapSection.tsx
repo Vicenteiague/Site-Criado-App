@@ -4,13 +4,23 @@ import { MapPin } from 'lucide-react';
 export default function MapSection() {
   return (
     <section className="py-24 relative overflow-hidden bg-black/40 border-t border-white/5">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="custom-container max-w-7xl">
         <div className="text-center mb-12">
+          
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-6 shadow-sm">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-medium text-white/90">Aberto agora</span>
+            <span className="text-xs font-mono text-white/70 ml-2 border-l border-white/20 pl-3">Fecha às 18h</span>
+          </div>
+
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-heading font-bold mb-4"
+            className="text-h2 font-display mb-8"
           >
             Onde Estamos <span className="text-gradient">Localizados</span>
           </motion.h2>
@@ -19,7 +29,7 @@ export default function MapSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/70 max-w-2xl mx-auto flex items-center justify-center gap-2"
+            className="text-body text-white/70 max-w-2xl mx-auto flex items-center justify-center gap-2"
           >
             <MapPin size={20} className="text-gold shrink-0" />
             <span>Venha tomar um café conosco ou fale online para todo o Brasil.</span>

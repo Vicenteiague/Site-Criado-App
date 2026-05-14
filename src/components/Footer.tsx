@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-black pt-16 pb-8 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="custom-container max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           
           {/* Brand Col */}

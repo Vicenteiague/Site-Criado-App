@@ -25,10 +25,10 @@ function CountUp({ to, label, suffix = "", delay = 0 }: { to: number, label: str
 
   return (
     <div ref={containerRef} className="flex flex-col items-center">
-      <span ref={ref} className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-2 text-gradient">
+      <span ref={ref} className="text-h1 font-mono font-bold text-gradient mb-2">
         0{suffix}
       </span>
-      <span className="text-white/70 font-medium text-center">{label}</span>
+      <span className="text-body text-white/70 font-medium text-center">{label}</span>
     </div>
   );
 }
@@ -48,13 +48,13 @@ export default function Metrics() {
         <div className="w-full max-w-4xl h-40 bg-gold/5 blur-[100px] rounded-[100%]" />
       </div>
 
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="custom-container max-w-7xl">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6"
+            className="text-h2 font-display mb-8"
           >
             Resultados Que Você <span className="text-gradient">Pode Ver</span>
           </motion.h2>

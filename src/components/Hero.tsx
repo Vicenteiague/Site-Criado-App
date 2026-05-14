@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, MapPin, Search, Star } from 'lucide-react';
+import { ArrowRight, MapPin, Search, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -8,46 +8,54 @@ export default function Hero() {
       <div className="absolute top-1/4 left-10 w-72 h-72 bg-gold/20 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/10 rounded-full blur-[120px] -z-10" />
       
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="custom-container relative z-10 split-section">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-sm font-medium mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-            </span>
-            Especialistas em SEO Local
+          {/* Label de credibilidade — ACIMA do título */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-label mb-6">
+            ⭐ 5.0 · Especialistas em SEO Local
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6">
-            Start Mkt Local: Seu Negócio no <span className="text-gradient">Topo do Google</span>, Onde Seus Clientes Procuram!
+          {/* Título com fonte display */}
+          <h1 className="text-hero font-display font-extrabold leading-tight mb-6">
+            Start Mkt Local<br />
+            <em className="text-gradient italic font-medium">O seu negócio no topo.</em>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-xl">
-            Especialistas em otimização de perfil Google para visibilidade e crescimento local.
-            Transforme pesquisas em clientes reais hoje mesmo.
+          {/* Subtítulo: proposta de valor em 1 linha */}
+          <p className="text-body text-white/70 mb-10 leading-relaxed max-w-xl">
+            Aceleramos vendas otimizando o seu Perfil de Empresa no Google. Visibilidade máxima na sua região.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* CTAs: máximo 2, hierarquia clara */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a
               href="https://wa.me/5567993174612"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold hover:bg-gold-light text-black font-bold text-lg transition-all shadow-[0_0_20px_rgba(218,165,32,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gold hover:bg-gold-light text-black font-semibold text-lg transition-all shadow-[0_4px_14px_rgba(218,165,32,0.4)] hover:shadow-[0_6px_20px_rgba(255,215,0,0.5)] hover:-translate-y-0.5"
             >
-              Otimize Seu Negócio Agora!
-              <ArrowRight size={20} />
+              📲 Falar no WhatsApp
             </a>
             <a
               href="#servicos"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full glass border-white/20 hover:bg-white/10 text-white font-semibold text-lg transition-all"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full glass border-white/20 hover:bg-white/10 text-white font-medium text-lg transition-all hover:-translate-y-0.5"
             >
-              Ver Serviços
+              Ver nossos serviços →
             </a>
+          </div>
+
+          {/* Indicadores de confiança */}
+          <div className="pt-8 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-3">
+            {['Google Meu Negócio Verificado', 'Aceita Pix e Cartão', 'Atendimento para Todo o Brasil', 'WhatsApp Direto'].map(item => (
+              <span key={item} className="flex items-center gap-2 text-sm text-white/80 font-medium">
+                <CheckCircle2 size={16} className="text-gold shrink-0" /> {item}
+              </span>
+            ))}
           </div>
         </motion.div>
 
@@ -55,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="relative lg:h-[600px] flex justify-center items-center"
+          className="relative lg:h-[600px] flex justify-center items-center mt-12 lg:mt-0"
         >
           {/* Glassmorphic abstract representation of Google Maps/Profile */}
           <div className="relative w-full max-w-md aspect-square rounded-full border border-white/10 bg-gradient-to-tr from-white/5 to-transparent flex items-center justify-center shadow-[inset_0_0_100px_rgba(255,255,255,0.02)] border-b-gold/20 border-r-gold/20">
@@ -66,7 +74,7 @@ export default function Hero() {
                 <img 
                   src="https://i.ibb.co/wZkSWjH0/i376041.jpg" 
                   alt="Marketing Digital Estratégia" 
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full pointer-events-none"
                 />
               </div>
               <div className="w-16 h-1.5 bg-black/60 rounded-[50%] mt-3 blur-[4px] relative -z-10"></div>
@@ -91,6 +99,24 @@ export default function Hero() {
               <div className="absolute top-1/2 -left-6 -translate-y-1/2 p-3 glass rounded-full">
                 <Search size={20} className="text-white/80" />
               </div>
+            </motion.div>
+
+            {/* Review Card Floating */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="absolute -bottom-4 md:bottom-4 -left-4 md:-left-12 z-30 glass-card p-5 rounded-2xl shadow-2xl max-w-[260px] border border-white/20 backdrop-blur-xl"
+            >
+              <div className="flex text-gold mb-3">
+                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} className="fill-gold" />)}
+              </div>
+              <p className="text-sm text-white/90 italic mb-3 leading-relaxed">
+                "A melhor agência de marketing da região! Me ajudou muito na visibilidade..."
+              </p>
+              <span className="text-xs text-white/50 font-medium font-mono">
+                — Juliéte Jurk, via Google
+              </span>
             </motion.div>
 
           </div>

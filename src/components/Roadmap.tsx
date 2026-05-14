@@ -26,13 +26,13 @@ const milestones = [
 export default function Roadmap() {
   return (
     <section id="roadmap" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-5xl">
+      <div className="custom-container max-w-5xl">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6"
+            className="text-h2 font-display mb-8"
           >
             Nossa Jornada: Inovação e <span className="text-gradient">Crescimento Contínuo</span>
           </motion.h2>
@@ -56,8 +56,8 @@ export default function Roadmap() {
                       viewport={{ once: true, margin: "-100px" }}
                       className="text-right"
                     >
-                      <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-white/60 leading-relaxed">{item.description}</p>
+                      <h3 className="text-h3 font-display text-white mb-2">{item.title}</h3>
+                      <p className="text-body text-white/60 leading-relaxed">{item.description}</p>
                     </motion.div>
                   )}
                 </div>
@@ -73,19 +73,19 @@ export default function Roadmap() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="md:-mt-2"
                   >
-                    <span className="inline-block px-3 py-1 bg-white/10 text-gold-light rounded-full text-sm font-bold mb-3 md:mb-4">
+                    <span className="inline-block px-3 py-1 bg-white/10 text-gold-light rounded-full text-small font-mono mb-3 md:mb-4">
                       {item.year}
                     </span>
                     {!isEven && (
                       <div className="hidden md:block">
-                        <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-white/60 leading-relaxed">{item.description}</p>
+                        <h3 className="text-h3 font-display text-white mb-2">{item.title}</h3>
+                        <p className="text-body text-white/60 leading-relaxed">{item.description}</p>
                       </div>
                     )}
                     {/* Mobile Only Title/Desc */}
                     <div className="md:hidden">
-                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-white/60 leading-relaxed text-sm">{item.description}</p>
+                      <h3 className="text-h3 font-display text-white mb-2">{item.title}</h3>
+                      <p className="text-body text-white/60 leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                 </div>

@@ -56,13 +56,13 @@ const reviews = [
 export default function Partners() {
   return (
     <section className="py-24 relative border-y border-white/5 bg-white/[0.02]">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="custom-container max-w-7xl">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4"
+            className="text-h2 font-display mb-8"
           >
             Empresas Que <span className="text-gradient">Confiam</span> na Start Mkt Local
           </motion.h2>
@@ -71,7 +71,7 @@ export default function Partners() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/70"
+            className="text-body text-white/70"
           >
             Nossos resultados falam por si só. Veja o que dizem os empresários da nossa região sobre os resultados alcançados com nossa otimização do Google.
           </motion.p>
@@ -91,28 +91,28 @@ export default function Partners() {
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full shrink-0 flex items-center justify-center font-bold text-xl text-black bg-gradient-to-br from-gold to-gold-light shadow-[0_0_15px_rgba(218,165,32,0.5)]">
+                <div className="w-12 h-12 rounded-full shrink-0 flex items-center justify-center font-display font-bold text-xl text-black bg-gradient-to-br from-gold to-gold-light shadow-[0_0_15px_rgba(218,165,32,0.5)]">
                   {review.author.charAt(0).toUpperCase()}
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-lg leading-tight line-clamp-2">
+                  <h3 className="text-h3 font-display text-white line-clamp-2 mb-1">
                     {review.author}
                   </h3>
-                  <p className="text-white/50 text-xs mt-1">
+                  <p className="text-small text-white/50">
                     {review.meta}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-1 mb-2">
+              <div className="flex items-center gap-1 mb-3">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} size={14} className="text-gold fill-gold" />
                 ))}
-                <span className="text-white/40 text-xs ml-2">{review.date}</span>
+                <span className="text-small text-white/40 ml-2">{review.date}</span>
               </div>
 
               {review.text && (
-                <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap mt-3">
+                <p className="text-body text-white/80 whitespace-pre-wrap">
                   "{review.text}"
                 </p>
               )}

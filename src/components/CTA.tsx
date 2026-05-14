@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 export default function CTA() {
   return (
     <section id="contato" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-5xl">
+      <div className="custom-container max-w-5xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,11 +15,11 @@ export default function CTA() {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LCAyMTUsIDAsIDAuMSkiLz48L3N2Zz4=')] opacity-30" />
           
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-6 text-white">
+            <h2 className="text-h1 font-display font-extrabold mb-8 text-white leading-tight">
               Pronto para Levar Seu Negócio ao <span className="text-gradient">Próximo Nível?</span>
             </h2>
             
-            <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-body text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
               Fale com nossos especialistas e descubra como podemos impulsionar sua presença online hoje mesmo. A consultoria inicial é o primeiro passo para o topo.
             </p>
             
@@ -48,7 +48,7 @@ export default function CTA() {
               <ArrowRight size={20} className="ml-2" />
             </a>
             
-            <p className="mt-6 text-sm text-white/50">Respostas rápidas em horário comercial.</p>
+            <p className="mt-8 text-small text-white/50">Respostas rápidas em horário comercial.</p>
           </div>
         </motion.div>
       </div>

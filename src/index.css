@@ -5,8 +5,49 @@
   --color-gold-light: #FFD700;
   --color-black-deep: #000000;
   
-  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  --text-hero: clamp(38px, 6vw, 72px);
+  --text-h1: clamp(28px, 4vw, 52px);
+  --text-h2: clamp(22px, 3vw, 38px);
+  --text-h3: clamp(17px, 2vw, 24px);
+  --text-body: clamp(14px, 1.2vw, 17px);
+  --text-small: clamp(11px, 1vw, 13px);
+  --text-label: 11px;
+}
+
+@layer components {
+  .custom-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 48px);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .split-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .split-section {
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+  }
 }
 
 @layer utilities {
@@ -33,6 +74,25 @@ body {
   background-attachment: fixed;
   color: white;
   transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading, .font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.text-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: var(--text-label);
+  color: var(--color-gold);
 }
 
 /* Light mode overrides */

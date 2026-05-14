@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Chatbot from './components/Chatbot';
+import WhatsAppFab from './components/WhatsAppFab';
 
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
@@ -38,6 +39,7 @@ export default function App() {
         <Footer />
       </Suspense>
       
+      <WhatsAppFab />
       <Chatbot />
     </div>
   );
