@@ -1,6 +1,4 @@
 import { lazy, Suspense } from 'react';
-import Chatbot from './components/Chatbot';
-import WhatsAppFab from './components/WhatsAppFab';
 
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
@@ -13,6 +11,8 @@ const About = lazy(() => import('./components/About'));
 const CTA = lazy(() => import('./components/CTA'));
 const MapSection = lazy(() => import('./components/MapSection'));
 const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppFab = lazy(() => import('./components/WhatsAppFab'));
+const Chatbot = lazy(() => import('./components/Chatbot'));
 
 export default function App() {
   return (
@@ -39,8 +39,10 @@ export default function App() {
         <Footer />
       </Suspense>
       
-      <WhatsAppFab />
-      <Chatbot />
+      <Suspense fallback={null}>
+        <WhatsAppFab />
+        <Chatbot />
+      </Suspense>
     </div>
   );
 }
