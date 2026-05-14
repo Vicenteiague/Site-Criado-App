@@ -1,9 +1,28 @@
 @import "tailwindcss";
 
+:root {
+  --gradient-google: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC04 75%, #EA4335 100%);
+  --gradient-blue: linear-gradient(135deg, #4285F4, #1a56db);
+  --gradient-dark: linear-gradient(180deg, #0A0A0F 0%, #0D0D18 100%);
+}
+
 @theme {
-  --color-gold: #DAA520;
-  --color-gold-light: #FFD700;
-  --color-black-deep: #000000;
+  --color-bg: #0A0A0F;
+  --color-surface: #141418;
+  --color-surface-2: #1C1C24;
+  --color-border: rgba(255,255,255,0.07);
+  --color-text: #F8F9FA;
+  --color-muted: #6B7280;
+
+  --google-blue: #4285F4;
+  --google-red: #EA4335;
+  --google-yellow: #FBBC04;
+  --google-green: #34A853;
+
+  /* Map old colors to new variables or keep them for backward compatibility */
+  --color-gold: var(--google-yellow);
+  --color-gold-light: #FCE8B2;
+  --color-black-deep: var(--color-bg);
   
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -58,7 +77,14 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 transition-colors duration-300;
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-gold-light;
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-blue);
+  }
+  .bg-gradient-google {
+    background-image: var(--gradient-google);
+  }
+  .bg-gradient-dark {
+    background-image: var(--gradient-dark);
   }
 }
 
@@ -67,12 +93,9 @@ html {
 }
 
 body {
-  background-color: var(--color-black-deep);
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(218, 165, 32, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(218, 165, 32, 0.08), transparent 25%);
+  background-image: var(--gradient-dark);
   background-attachment: fixed;
-  color: white;
+  color: var(--color-text);
   transition: background-color 0.4s ease, color 0.4s ease;
   font-family: var(--font-body);
   font-weight: 300;
