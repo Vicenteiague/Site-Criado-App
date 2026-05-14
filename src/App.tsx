@@ -12,7 +12,6 @@ const CTA = lazy(() => import('./components/CTA'));
 const MapSection = lazy(() => import('./components/MapSection'));
 const Footer = lazy(() => import('./components/Footer'));
 const WhatsAppFab = lazy(() => import('./components/WhatsAppFab'));
-const Chatbot = lazy(() => import('./components/Chatbot'));
 
 export default function App() {
   return (
@@ -41,7 +40,6 @@ export default function App() {
       
       <Suspense fallback={null}>
         <WhatsAppFab />
-        <Chatbot />
       </Suspense>
     </div>
   );
