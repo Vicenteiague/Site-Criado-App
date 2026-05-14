@@ -23,7 +23,7 @@ export default function Hero() {
           {/* Título com fonte display */}
           <h1 className="text-hero font-display font-extrabold leading-tight mb-6">
             Start Mkt Local<br />
-            <em className="text-gradient italic font-medium">O seu negócio no topo.</em>
+            <em className="text-gradient italic font-medium">O seu negócio no topo das buscas no Google.</em>
           </h1>
           
           {/* Subtítulo: proposta de valor em 1 linha */}
